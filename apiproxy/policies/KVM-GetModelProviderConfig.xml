@@ -17,12 +17,12 @@
     <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
     <Get assignTo="geminiKey">
         <Key>
-            <Parameter>openai_api_key</Parameter>
+            <Parameter>gemini_api_key</Parameter>
         </Key>
     </Get>
     <Get assignTo="openAIKey">
         <Key>
-            <Parameter>gemini_api_key</Parameter>
+            <Parameter>openai_api_key</Parameter>
         </Key>
     </Get>
     <Scope>environment</Scope>

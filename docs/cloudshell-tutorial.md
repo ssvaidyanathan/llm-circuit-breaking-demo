@@ -33,14 +33,14 @@ gcloud services enable aiplatform.googleapis.com cloudtasks.googleapis.com  --pr
 
 ### 1. Edit the following variables in the `env.sh` file
 
-Open the environment variables file <walkthrough-editor-open-file filePath="llm-circuit-breaking/env.sh">env.sh</walkthrough-editor-open-file> and set the following variables:
+Open the environment variables file <walkthrough-editor-open-file filePath="env.sh">env.sh</walkthrough-editor-open-file> and set the following variables:
 
-* Set the <walkthrough-editor-select-regex filePath="llm-circuit-breaking/env.sh" regex="APIGEE_PROJECT_ID_TO_SET">APIGEE_PROJECT</walkthrough-editor-select-regex>. The value should be <walkthrough-project-id/>.
-* Set the <walkthrough-editor-select-regex filePath="llm-circuit-breaking/env.sh" regex="APIGEE_HOST_TO_SET">APIGEE_HOST</walkthrough-editor-select-regex> of your Apigee instance. For example, `my-test.nip.io`.
-* Set the <walkthrough-editor-select-regex filePath="llm-circuit-breaking/env.sh" regex="APIGEE_ENV_TO_SET">APIGEE_ENV</walkthrough-editor-select-regex> to the deploy the sample Apigee artifacts. For example, `dev-env`.
-* Set the <walkthrough-editor-select-regex filePath="llm-circuit-breaking/env.sh" regex="APIGEE_REGION_TO_SET">APIGEE_REGION</walkthrough-editor-select-regex> to the region of your Apigee instance. For example, `us-central1`.
-* Set the <walkthrough-editor-select-regex filePath="llm-circuit-breaking/env.sh" regex="OPENAI_API_KEY_TO_SET">OPENAI_API_KEY</walkthrough-editor-select-regex> with the OpenAI API key.
-* Set the <walkthrough-editor-select-regex filePath="llm-circuit-breaking/env.sh" regex="GEMINI_API_KEY_TO_SET">GEMINI_API_KEY</walkthrough-editor-select-regex> with the Gemini API key.
+* Set the <walkthrough-editor-select-regex filePath="env.sh" regex="APIGEE_PROJECT_ID_TO_SET">APIGEE_PROJECT</walkthrough-editor-select-regex>. The value should be <walkthrough-project-id/>.
+* Set the <walkthrough-editor-select-regex filePath="env.sh" regex="APIGEE_HOST_TO_SET">APIGEE_HOST</walkthrough-editor-select-regex> of your Apigee instance. For example, `my-test.nip.io`.
+* Set the <walkthrough-editor-select-regex filePath="env.sh" regex="APIGEE_ENV_TO_SET">APIGEE_ENV</walkthrough-editor-select-regex> to the deploy the sample Apigee artifacts. For example, `dev-env`.
+* Set the <walkthrough-editor-select-regex filePath="env.sh" regex="APIGEE_REGION_TO_SET">APIGEE_REGION</walkthrough-editor-select-regex> to the region of your Apigee instance. For example, `us-central1`.
+* Set the <walkthrough-editor-select-regex filePath="env.sh" regex="OPENAI_API_KEY_TO_SET">OPENAI_API_KEY</walkthrough-editor-select-regex> with the OpenAI API key.
+* Set the <walkthrough-editor-select-regex filePath="env.sh" regex="GEMINI_API_KEY_TO_SET">GEMINI_API_KEY</walkthrough-editor-select-regex> with the Gemini API key.
 
 ### 2. Set environment variables
 

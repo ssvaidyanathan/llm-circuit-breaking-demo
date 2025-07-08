@@ -62,7 +62,7 @@ sed -i "s/OPENAI_API_KEY/$OPENAI_API_KEY/g" config/env__"${APIGEE_ENV}"__llm-cir
 sed -i "s/GEMINI_API_KEY/$GEMINI_API_KEY/g" config/env__"${APIGEE_ENV}"__llm-circuit-breaking-config__kvmfile__0.json
 
 echo "Importing KVMs to Apigee environment"
-apigeecli kvms import -f config/env__"${APIGEE_ENV}"__llm-circuit-breaking-config__kvmfile__0.json --org "$PROJECT_ID" --token "$TOKEN"
+apigeecli kvms import -f config/env__"${APIGEE_ENV}"__llm-circuit-breaking-config__kvmfile__0.json --org "$APIGEE_PROJECT" --token "$TOKEN"
 rm config/env__"${APIGEE_ENV}"__llm-circuit-breaking-config__kvmfile__0.json
 
 

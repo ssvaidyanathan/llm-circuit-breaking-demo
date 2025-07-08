@@ -17,6 +17,9 @@
   <PreFlow name="PreFlow">
     <Request>
       <Step>
+        <Name>KVM-GetModelProviderConfig</Name>
+      </Step>
+      <Step>
         <Name>Q-LLM-Failover</Name>
       </Step>
       <Step>

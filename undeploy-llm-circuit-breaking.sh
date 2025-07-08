@@ -44,7 +44,7 @@ echo "Deleting proxy llm-circuit-breaking-demo-v1 proxy"
 apigeecli apis delete --name llm-circuit-breaking-demo-v1 --org "$APIGEE_PROJECT" --token "$TOKEN"
 
 echo "Deleting KVMs"
-apigeecli kvms delete --name llm-circuit-breaking-config --env "$APIGEE_ENV" --org "$PROJECT_ID" --token "$TOKEN"
+apigeecli kvms delete --name llm-circuit-breaking-config --env "$APIGEE_ENV" --org "$APIGEE_PROJECT" --token "$TOKEN"
 
 echo "Deleting LLM Target Report"
 

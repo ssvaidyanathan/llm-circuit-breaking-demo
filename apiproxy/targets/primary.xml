@@ -27,7 +27,7 @@
       <Step>
         <Name>DC-Collect</Name>
       </Step>
-      <Condition>error.status.code = 429 Or error.status.code GreaterThan 399</Condition>
+      <Condition>error.status.code = 429</Condition>
     </FaultRule>
   </FaultRules>
   <PreFlow name="PreFlow">

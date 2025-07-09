@@ -16,12 +16,15 @@
   <Properties/>
   <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
   <JSONPayload>
-      <Variable name="model" type="string">
-         <JSONPath>$.model</JSONPath>
-      </Variable>
-      <Variable name="messages" type="nodeset">
-         <JSONPath>$.messages</JSONPath>
-      </Variable>
-   </JSONPayload>
+    <Variable name="model" type="string">
+      <JSONPath>$.model</JSONPath>
+    </Variable>
+    <Variable name="messages" type="nodeset">
+      <JSONPath>$.messages</JSONPath>
+    </Variable>
+    <Variable name="tools" type="nodeset">
+      <JSONPath>$.tools</JSONPath>
+    </Variable>
+  </JSONPayload>
   <Source clearPayload="false">request</Source>
 </ExtractVariables>

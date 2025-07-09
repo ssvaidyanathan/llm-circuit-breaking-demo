@@ -22,7 +22,7 @@
         <Header name="Content-Type">application/json</Header>
         <Header name="Authorization">Bearer {geminiKey}</Header>
       </Headers>
-      <Payload contentType="application/json">{"model": "gemini-2.5-flash", "messages":{messages}}</Payload>
+      <Payload contentType="application/json">{"model": "gemini-2.5-flash", "messages":{messages}, "tools": {tools}}</Payload>
     </Set>
   </Request>
   <Response>secondary_response</Response>

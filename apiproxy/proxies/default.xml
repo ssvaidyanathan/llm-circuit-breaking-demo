@@ -17,13 +17,23 @@
   <PreFlow name="PreFlow">
     <Request>
       <Step>
+        <Name>EV-RequestPayload</Name>
+      </Step>
+      <Step>
+        <Name>VA-APIKey</Name>
+      </Step>
+      <Step>
+        <Name>AC-ModelCheck</Name>
+      </Step>
+      <Step>
+        <Name>RF-ModelMismatch</Name>
+        <Condition>assertcondition.AC-ModelCheck.truthValue = false</Condition>
+      </Step>
+      <Step>
         <Name>KVM-GetModelProviderConfig</Name>
       </Step>
       <Step>
         <Name>Q-LLM-Failover</Name>
-      </Step>
-      <Step>
-        <Name>EV-Path-Suffix</Name>
       </Step>
     </Request>
     <Response/>

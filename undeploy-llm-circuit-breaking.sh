@@ -36,6 +36,17 @@ export PATH=$PATH:$HOME/.apigeecli/bin
 TOKEN=$(gcloud auth print-access-token)
 gcloud config set project "$APIGEE_PROJECT"
 
+echo "Deleting Developer App"
+DEVELOPER_ID=$(apigeecli developers get --email llm-circuit-breaking-demo-developer@acme.com --org "$APIGEE_PROJECT" --token "$TOKEN" --disable-check | jq .'developerId' -r)
+apigeecli apps delete --id "$DEVELOPER_ID" --name llm-circuit-breaking-demo-o3-app --org "$APIGEE_PROJECT" --token "$TOKEN"
+apigeecli apps delete --id "$DEVELOPER_ID" --name llm-circuit-breaking-demo-gpt-4.1-app --org "$APIGEE_PROJECT" --token "$TOKEN"
+
+echo "Deleting Developer"
+apigeecli developers delete --email llm-circuit-breaking-demo-developer@acme.com --org "$APIGEE_PROJECT" --token "$TOKEN"
+
+echo "Deleting API Products"
+apigeecli products delete --name llm-circuit-breaking-demo-product --org "$APIGEE_PROJECT" --token "$TOKEN"
+
 echo "Undeploying llm-circuit-breaking-demo-v1 proxy"
 REV=$(apigeecli envs deployments get --env "$APIGEE_ENV" --org "$APIGEE_PROJECT" --token "$TOKEN" --disable-check | jq .'deployments[]| select(.apiProxy=="llm-circuit-breaking-demo-v1").revision' -r)
 apigeecli apis undeploy --name llm-circuit-breaking-demo-v1 --env "$APIGEE_ENV" --rev "$REV" --org "$APIGEE_PROJECT" --token "$TOKEN"

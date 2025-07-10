@@ -11,10 +11,13 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<ExtractVariables continueOnError="false" enabled="true" name="EV-Path-Suffix">
-  <DisplayName>EV-Path-Suffix</DisplayName>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-RequestPayload">
+  <DisplayName>EV-RequestPayload</DisplayName>
   <Properties/>
   <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <Header name="Authorization">
+    <Pattern ignoreCase="false">Bearer {apikey}</Pattern>
+  </Header>
   <JSONPayload>
     <Variable name="model" type="string">
       <JSONPath>$.model</JSONPath>

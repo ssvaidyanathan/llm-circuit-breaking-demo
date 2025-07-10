@@ -86,6 +86,33 @@ echo "Importing and Deploying Apigee llm-circuit-breaking-demo-v1 proxy..."
 REV=$(apigeecli apis create bundle -f ./apiproxy -n llm-circuit-breaking-demo-v1 --org "$APIGEE_PROJECT" --token "$TOKEN" --disable-check | jq ."revision" -r)
 apigeecli apis deploy --wait --name llm-circuit-breaking-demo-v1 --ovr --rev "$REV" --org "$APIGEE_PROJECT" --env "$APIGEE_ENV" --token "$TOKEN"
 
+echo "Creating API Products"
+apigeecli products create --name "llm-circuit-breaking-demo-product" --attrs="access=public" \
+  --display-name "llm-circuit-breaking-demo-product" \
+  --opgrp ./config/llm-circuit-breaking-demo-product-ops.json --envs "$APIGEE_ENV" \
+  --approval auto --org "$APIGEE_PROJECT" --token "$TOKEN"
+
+echo "Creating Developer"
+apigeecli developers create --user llm-circuit-breaking-demo-developer \
+  --email "llm-circuit-breaking-demo-developer@acme.com" --first="LLM Circuit Breaker Demo" \
+  --last="Sample User" --org "$APIGEE_PROJECT" --token "$TOKEN"
+
+echo "Creating o3 Developer App"
+apigeecli apps create --name llm-circuit-breaking-demo-o3-app --email "llm-circuit-breaking-demo-developer@acme.com" \
+  --prods "llm-circuit-breaking-demo-product" --attrs "model=o3" \
+  --org "$APIGEE_PROJECT" --token "$TOKEN" --disable-check
+
+O3_APIKEY=$(apigeecli apps get --name "llm-circuit-breaking-demo-o3-app" --org "$APIGEE_PROJECT" --token "$TOKEN" --disable-check | jq ."[0].credentials[0].consumerKey" -r)
+
+echo "Creating gpt-4.1 Developer App"
+apigeecli apps create --name llm-circuit-breaking-demo-gpt-4.1-app --email "llm-circuit-breaking-demo-developer@acme.com" \
+  --prods "llm-circuit-breaking-demo-product" --attrs "model=gpt-4.1" \
+  --org "$APIGEE_PROJECT" --token "$TOKEN" --disable-check
+
+GPT4_1_APIKEY=$(apigeecli apps get --name "llm-circuit-breaking-demo-gpt-4.1-app" --org "$APIGEE_PROJECT" --token "$TOKEN" --disable-check | jq ."[0].credentials[0].consumerKey" -r)
+
+
+
 echo " "
 echo "All the Apigee artifacts are successfully deployed!"
 echo "You can now go back to the Colab notebook to test the sample."

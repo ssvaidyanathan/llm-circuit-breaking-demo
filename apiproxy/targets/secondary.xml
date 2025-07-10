@@ -28,6 +28,9 @@
       <Step>
         <Name>AM-Secondary</Name>
       </Step>
+      <Step>
+        <Name>JS-SetToolCallsId</Name>
+      </Step>
     </Response>
   </PostFlow>
   <Flows/>

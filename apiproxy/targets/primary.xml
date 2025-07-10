@@ -25,6 +25,9 @@
         <Name>AM-Secondary-Retry</Name>
       </Step>
       <Step>
+        <Name>JS-SetToolCallsId</Name>
+      </Step>
+      <Step>
         <Name>DC-Collect</Name>
       </Step>
       <Condition>error.status.code = 429</Condition>

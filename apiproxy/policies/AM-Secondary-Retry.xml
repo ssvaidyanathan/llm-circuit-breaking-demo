@@ -30,5 +30,5 @@
   <Copy source="secondary_response">
   </Copy>
   <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-  <AssignTo createNew="false" transport="http" type="response">error</AssignTo>
+  <AssignTo createNew="true" transport="http" type="response">error</AssignTo>
 </AssignMessage>
